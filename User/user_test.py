@@ -16,24 +16,53 @@ class TestUser(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_contact = User("a", "b", "c", "d")  # create contact object
+        self.new_user = User("a", "b", "c", "d")  # create user object
 
     def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_contact.first_name, "a")
-        self.assertEqual(self.new_contact.last_name, "b")
-        self.assertEqual(self.new_contact.password, "c")
-        self.assertEqual(self.new_contact.email, "d")
+        self.assertEqual(self.new_user.first_name, "a")
+        self.assertEqual(self.new_user.last_name, "b")
+        self.assertEqual(self.new_user.password, "c")
+        self.assertEqual(self.new_user.email, "d")
 
     def test_save_user(self):
         '''
-        test_save_contact test case to test if the contact object is saved into
-         the contact list
+        test_save_user test case to test if the user object is saved into
+         the user list
         '''
-        self.new_contact.save_user()  # saving the new contact
+        self.new_user.save_user()  # saving the new contact
         self.assertEqual(len(User.user_list), 1)
-if __name__ == '__main__':
+
+    def test_save_multiple_user(self):
+        '''
+        test_save_multiple_user to check if we can save multiple user
+        objects to our user_list
+        '''
+        self.new_user.save_user()
+        test_user = User("Test", "user", "d", "test@user.com")  # new user
+        test_user.save_user()
+        self.assertEqual(len(User.user_list), 2)
+
+        # setup and class creation up here
+        def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            User.user_list = []
+
+        # other test cases here
+        def test_save_multiple_user(self):
+            '''
+            test_save_multiple_contact to check if we can save multiple contact
+            objects to our contact_list
+            '''
+            self.new_contact.save_contact()
+            test_contact = User("Test", "user", "0712345678", "test@user.com")  # new contact
+            test_contact.save_user()
+            self.assertEqual(len(Contact.contact_list), 2)
+
+if __name__ ==  '__main__':
     unittest.main()

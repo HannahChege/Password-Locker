@@ -13,3 +13,13 @@ class User:
             self.last_name = last_name
             self.password = password
             self.email = email
+
+        contact_list = []  # Empty contact list
+
+        # Init method up here
+        def save_user(self):
+            '''
+            save_user method saves user objects into user_list
+            '''
+
+            User.user_list.append(self)
