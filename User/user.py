@@ -14,7 +14,7 @@ class User:
             self.password = password
             self.email = email
 
-        contact_list = []  # Empty contact list
+        user_list = []  # Empty user list
 
         # Init method up here
         def save_user(self):
@@ -23,3 +23,10 @@ class User:
             '''
 
             User.user_list.append(self)
+
+        def delete_user(self):
+            '''
+            delete_user method deletes a saved user from the user_list
+            '''
+
+            User.user_list.remove(self)
