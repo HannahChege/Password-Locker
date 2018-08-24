@@ -1,17 +1,15 @@
 class User:
-    """
-    Class that generates new instances of Users
-    """
+        """
+        Class that generates new instances of contacts.
+        """
 
-       User_list = [] # Empty user list
+        user_list = [] # Empty contact list
 
- def __init__(self, first_name, last_name, password, email):
-        '''
-        __init__ method that helps us define properties for our objects.
+        def __init__(self,first_name,last_name,password,email):
 
-        Args:
-            first_name: New contact first name.
-            last_name : New contact last name.
-            password: New contact password.
-            email : New contact email address.
-        '''
+          # docstring removed for simplicity
+
+            self.first_name = first_name
+            self.last_name = last_name
+            self.password = password
+            self.email = email
