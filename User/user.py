@@ -32,16 +32,28 @@ class User:
             User.user_list.remove(self)
 
         @classmethod
-        def find_by_first_name(cls, first_name):
+        def find_by_first_name(cls, name):
             '''
-            Method that takes in a number and returns a contact that matches that number.
+            Method that takes in a name and returns a name that matches that name.
 
             Args:
-                number: Phone number to search for
+                number: name to search for
             Returns :
-                Contact of person that matches the number.
+                user of person that matches the name.
             '''
 
             for user in cls.user_list:
-                if user.first_name == first_name:
+                if user.first_name == name:
                     return user
+        @classmethod
+        def user_exist(cls,name):
+            for user in cls.user_list:
+                if user.password == name:
+                    return user
+
+        @classmethod
+        def display_user(cls):
+            '''
+            method that returns the user list
+            '''
+            return cls.user_list
