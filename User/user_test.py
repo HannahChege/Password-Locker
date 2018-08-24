@@ -33,7 +33,7 @@ class TestUser(unittest.TestCase):
         test_save_user test case to test if the user object is saved into
          the user list
         '''
-        self.new_user.save_user()  # saving the new contact
+        self.new_user.save_user()  # saving the new user
         self.assertEqual(len(User.user_list), 1)
 
     def test_save_multiple_user(self):
@@ -47,22 +47,23 @@ class TestUser(unittest.TestCase):
         self.assertEqual(len(User.user_list), 2)
 
         # setup and class creation up here
-        def tearDown(self):
+    def tearDown(self):
             '''
             tearDown method that does clean up after each test case has run.
             '''
             User.user_list = []
 
         # other test cases here
-        def test_save_multiple_user(self):
+    def test_save_multiple_user(self):
             '''
-            test_save_multiple_contact to check if we can save multiple contact
-            objects to our contact_list
+            test_save_multiple_user to check if we can save multiple user
+            objects to our user_list
             '''
-            self.new_contact.save_contact()
-            test_contact = User("Test", "user", "0712345678", "test@user.com")  # new contact
-            test_contact.save_user()
-            self.assertEqual(len(Contact.contact_list), 2)
+            self.new_user.save_user()
+            test_user = User("Test", "user", "c", "d")  # new user
+            test_user.save_user()
+            self.assertEqual(len(User.user_list), 2)
+        
 
 if __name__ ==  '__main__':
     unittest.main()
