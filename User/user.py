@@ -32,7 +32,7 @@ class User:
             User.user_list.remove(self)
 
         @classmethod
-        def find_by_number(cls, number):
+        def find_by_first_name(cls, first_name):
             '''
             Method that takes in a number and returns a contact that matches that number.
 
@@ -43,5 +43,5 @@ class User:
             '''
 
             for user in cls.user_list:
-                if contact.phone_number == number:
+                if user.first_name == first_name:
                     return user
