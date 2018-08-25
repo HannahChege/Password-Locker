@@ -1,8 +1,9 @@
 import unittest # Importing the unittest module
+import pyperclip, sys
 from user import User # Importing the user class
-import pyperclip
 
 class TestUser(unittest.TestCase):
+
 
     '''
     Test class that defines test cases for the contact class behaviours.
@@ -113,15 +114,13 @@ class TestUser(unittest.TestCase):
 
     def test_copy_email(self):
         '''
-        Test to confirm that we are copying the email address from a found user
+        Test to confirm that we are copying the email address from a found contact
         '''
 
         self.new_user.save_user()
-        User.copy_email("d")
+        User.copy_email("a")
 
         self.assertEqual(self.new_user.email, pyperclip.paste())
 
-
-
-if __name__ ==  '__main__':
+if __name__=='__main__':
     unittest.main()
