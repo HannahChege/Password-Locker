@@ -1,18 +1,18 @@
 #!/usr/bin/env python3.6
-from user import User
+
 from credential import Credential
 def create_credential(fname,lname,password,email):
-            '''
-            Function to create a new credential
-            '''
-            new_credential = Credential(fname,lname,password,email)
-            return new_credential
+    '''
+    Function to create a new credential
+    '''
+    new_credential = Credential(fname,lname,password,email)
+    return new_credential
 
-def save_credentials(credential):
+def save_credential(credential):
     '''
-    Function to save user
+    Function to save credential
     '''
-    credential.save_credential()
+    Credential.save_credentials(credential)
 def del_credential(credential):
     '''
     Function to delete a user
@@ -20,13 +20,13 @@ def del_credential(credential):
     credential.delete_credential()
 def find_credential(first_name):
     '''
-    Function that finds a user by number and returns the user
+    Function that finds a user by name and returns the user
     '''
     return Credential.find_by_first_name(first_name)
 
 def check_existing_credentials(first_name):
     '''
-    Function that check if a credential exists with that number and return a Boolean
+    Function that check if a credential exists with that name and return a Boolean
     '''
     return Credential.credential_exist(first_name)
 
@@ -68,7 +68,7 @@ def main():
             print("Email address ...")
             e_address = input()
 
-            save_credential(create_credential(f_name, l_name, p_word, e_address))  # create and save new credential.
+            save_credential(create_credential(f_name, l_name, p_word, e_address))  # create and save new credential
             print ('\n')
             print(f"New User {f_name} {l_name} created")
             print ('\n')
@@ -110,7 +110,6 @@ def main():
             print("I really didn't get that. Please use the short codes")
 
 if __name__ == '__main__':
-
-    main()
+     main()
 
 
