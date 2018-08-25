@@ -8,12 +8,12 @@ def create_credential(fname,lname,password,email):
             new_credential = Credential(fname,lname,password,email)
             return new_credential
 
-def save_users(credential):
+def save_credentials(credential):
     '''
     Function to save user
     '''
     credential.save_credential()
-def del_user(credential):
+def del_credential(credential):
     '''
     Function to delete a user
     '''
@@ -110,8 +110,7 @@ def main():
             print("I really didn't get that. Please use the short codes")
 
 if __name__ == '__main__':
+
     main()
-
-
 
 

@@ -18,7 +18,7 @@ class Credential:
         user_list = []  # Empty user list
 
         # Init method up here
-        def save_credential(self):
+        def save_credentials(self):
             '''
             save_credential method saves user objects into user_list
             '''
